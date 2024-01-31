@@ -28,25 +28,27 @@ conda install ipython pip
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 
-# follow PyTorch installation in https://pytorch.org/get-started/locally/
+# follow PyTorch installation in [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/previous-versions/)
+# pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu117
+
 # we give the instructions for 11.3
 conda install pytorch==1.10.0 torchvision==0.11.0 cudatoolkit=11.3 -c pytorch
 
 export INSTALL_DIR=$PWD
 
-# install pycocotools
+# install pycocotools=2.0
 cd $INSTALL_DIR
 git clone https://github.com/cocodataset/cocoapi.git
 cd cocoapi/PythonAPI
 python setup.py build_ext install
 
-# install cityscapesScripts
+# install cityscapesScripts==2.2.2
 cd $INSTALL_DIR
 git clone https://github.com/mcordts/cityscapesScripts.git
 cd cityscapesScripts/
 python setup.py build_ext install
 
-# install apex
+# install apex  apex==0.1
 cd $INSTALL_DIR
 git clone https://github.com/NVIDIA/apex.git
 cd apex
